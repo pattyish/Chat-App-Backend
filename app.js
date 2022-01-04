@@ -6,6 +6,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Routes
+app.use('/user',require('./routes/user'));
+
 // setupo error Handlers
 app.use(errorHandlers.notFound);
 app.use(errorHandlers.mongoseErrors);
