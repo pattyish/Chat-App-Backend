@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/user',require('./routes/user'));
-
+app.use('/chatroom',require('./routes/chatroom'));
 // setupo error Handlers
 app.use(errorHandlers.notFound);
 app.use(errorHandlers.mongoseErrors);
