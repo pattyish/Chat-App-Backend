@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-require("../models/Chatroom");
 const Chatroom = mongoose.model("Chatroom");
 
 exports.createChatroom = async (req, res) => {
@@ -25,3 +24,11 @@ exports.createChatroom = async (req, res) => {
     chatroomName: chatroomName,
   });
 };
+
+exports.getAllChatrooms = async (req, res) => {
+const chatrooms = await Chatroom.find({});
+res.status(200).json({
+    status: 200,
+    chatrooms: chatrooms
+})
+}
