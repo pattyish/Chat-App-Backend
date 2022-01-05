@@ -5,6 +5,8 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// setup cross origin
+app.use(require("cors")());
 
 // Routes
 app.use('/user',require('./routes/user'));
